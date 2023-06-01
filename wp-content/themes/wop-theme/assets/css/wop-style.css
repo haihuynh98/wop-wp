@@ -1,0 +1,34 @@
+.primary-text-color {
+    color: #FEC14F;
+}
+
+@media screen and (min-width: 992px) {
+    .hide-pc {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .hide-mobile {
+        display: none;
+    }
+
+    .cursor {
+        display: none;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
+
+ul.language-switcher {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  ul.language-switcher li {
+    margin-right: 10px;
+  }
