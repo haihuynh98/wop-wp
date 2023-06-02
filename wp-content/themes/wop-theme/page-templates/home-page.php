@@ -125,7 +125,7 @@ get_header();
                 </div>
                 <div class="col-lg-7 valign">
                     <div class="cont sec-lg-head">
-                        <h6 class="dot-titl mb-20">About us</h6>
+                        <h6 class="dot-titl mb-20"><?= pll__('About us');?></h6>
                         <h2 class="d-slideup wow">
                             <span class="sideup-text"><span class="up-text">
                                     <?= $about_us['title'] ?>
@@ -232,7 +232,7 @@ get_header();
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="position-re">
-                            <h6 class="dot-titl mb-10">Our Value</h6>
+                            <h6 class="dot-titl mb-10"><?= pll__('Our Value');?></h6>
                             <h2 class="fz-70 fw-700">
                                 <?= $our_value['title'] ?>
                             </h2>
@@ -301,7 +301,7 @@ get_header();
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="sec-lg-head text-center">
-                        <h6 class="dot-titl mb-10">More activities</h6>
+                        <h6 class="dot-titl mb-10"><?= pll__('More activities');?></h6>
                         <h2 class="fz-70 fw-700">
                             <span><?= $more_activities['title']?></span> <br>
                         </h2>
