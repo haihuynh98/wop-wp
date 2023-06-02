@@ -71,13 +71,13 @@ get_header();
 
                         <div class="stauts d-flex align-items-center mt-80">
                             <div>
-                                <h5>JOY Partner</h5>
+                                <h5><?= pll__('JOY Partner');?></h5>
                                 <h3>
-                                    <?= $about['joy_partner'] ?> <span class="fz-14">Countries</span>
+                                    <?= $about['joy_partner'] ?> <span class="fz-14"><?= pll__('Countries');?></span>
                                 </h3>
                             </div>
                             <div class="ml-auto">
-                                <h5>Participants </h5>
+                                <h5><?= pll__('Participants');?></h5>
                                 <h3>
                                     <?= $about['participants'] ?>
                                 </h3>
@@ -145,7 +145,7 @@ get_header();
         <div class="container ontop">
             <div class="row">
                 <div class="col-lg-4">
-                    <h6><span class="fz-14">FAMOUSLY KNOW</h6>
+                    <h6><span class="fz-14"><?= pll__('Famously know');?></h6>
                 </div>
                 <div class="col-lg-6 offset-lg-1">
                     <div class="text">
@@ -170,7 +170,7 @@ get_header();
                 <div class="row justify-content-around">
                     <div class="col-lg-6">
                         <div class="cont md-mb50">
-                            <h6 class="mb-15"><span class="fz-14">Top Partner</h6>
+                            <h6 class="mb-15"><span class="fz-14"><?= pll__('Top Partner');?></h6>
                             <h3 class="mb-30">
                                 <?= $top_partner['title'] ?>
                             </h3>

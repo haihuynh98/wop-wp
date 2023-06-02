@@ -30,10 +30,10 @@ $template_file = get_post_meta(get_the_ID(), '_wp_page_template', true);
 					<div class="col-lg-6 d-flex align-items-center">
 						<div class="colum md-mb50">
 							<div class="tit mb-20">
-								<h6>Address</h6>
+								<h6><?= pll__('Address');?></h6>
 							</div>
 							<div class="text">
-								<p class="mb-10">18 Nguyen Lam Street, Ward 6, District 10, Ho Chi Minh City, Vietnam
+								<p class="mb-10"><?= pll__('18 Nguyen Lam Street, Ward 6, District 10, Ho Chi Minh City, Vietnam');?>
 								</p>
 							</div>
 							<div class="text">

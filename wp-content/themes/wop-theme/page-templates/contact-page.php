@@ -23,7 +23,7 @@ get_header();
             <div class="row">
                 <div class="col-lg-7">
                     <div class="caption">
-                        <h6 class="sub-title">Contact Us</h6>
+                        <h6 class="sub-title"><?= pll__('Contact Us');?></h6>
                         <h1 class="fz-55">
                             <?= $title ?>
                         </h1>
@@ -49,12 +49,12 @@ get_header();
             <div class="row">
                 <div class="col-lg-5">
                     <div class="sec-lg-head mb-80">
-                        <h6 class="dot-titl-non mb-10">Get In Touch</h6>
-                        <h2 class="fz-50">Let's get in <br> touch with us.</h2>
-                        <p class="fz-15 mt-10">If you would like to work with us or just want to get in
-                            touch, we’d love to hear from you!</p>
+                        <h6 class="dot-titl-non mb-10"><?= pll__('Get In Touch');?></h6>
+                        <h2 class="fz-50"><?= pll__("Let's get in <br> touch with us.");?></h2>
+                        <p class="fz-15 mt-10"><?= pll__("If you would like to work with us or just want to get in
+                            touch, we’d love to hear from you!");?></p>
                         <div class="address fz-20 fw-600 mt-30">
-                            <p>Address:
+                            <p><?= pll__('Address');?>:
                             <address>
                                 <?= $address ?>
                             </address>
