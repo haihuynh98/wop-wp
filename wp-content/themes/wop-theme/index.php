@@ -12,21 +12,22 @@
  *
  * @package WOP_VN
  */
+
 // Kiểm tra xem option có tồn tại hay không
-if (!get_option('admin_ip')) {
-	// Nếu option chưa tồn tại, thêm option mới
-	add_option('admin_ip', '115.78.235.94');
-}
+// if (!get_option('admin_ip')) {
+// 	// Nếu option chưa tồn tại, thêm option mới
+// 	add_option('admin_ip', '115.78.235.94');
+// }
 
-$admin_ips = explode(',', get_option('admin_ip'));
-// Lấy địa chỉ IP của người truy cập hiện tại
-$visitor_ip = $_SERVER['REMOTE_ADDR'];
+// $admin_ips = explode(',', get_option('admin_ip'));
+// // Lấy địa chỉ IP của người truy cập hiện tại
+// $visitor_ip = $_SERVER['REMOTE_ADDR'];
 
-if (!in_array($visitor_ip, $admin_ips)) {
-	// Người truy cập không phải là bạn, chuyển hướng đến trang coming-soon.html
-	header('Location: /coming-soon.html');
-	exit;
-}
+// if (!in_array($visitor_ip, $admin_ips)) {
+// 	// Người truy cập không phải là bạn, chuyển hướng đến trang coming-soon.html
+// 	header('Location: /coming-soon.html');
+// 	exit;
+// }
 
 
 

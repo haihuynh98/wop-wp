@@ -71,7 +71,7 @@ $menu_items = get_wop_top_menu();
 
 			<!-- Logo -->
 			<a class="logo icon-img-100 hide-pc" href="#">
-				<img src="assets/wop/logo-wop.png" alt="logo">
+				<img src="<?= ASSETS_URL . '/wop/logo-wop.png' ?>" alt="logo">
 			</a>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
