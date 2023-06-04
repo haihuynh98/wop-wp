@@ -27,8 +27,13 @@ ul.language-switcher {
     padding: 0;
     margin: 0;
     list-style: none;
-  }
-  
-  ul.language-switcher li {
+}
+
+ul.language-switcher li {
     margin-right: 10px;
-  }
+}
+
+.lang-switch {
+position: absolute;
+right: 30px;
+}

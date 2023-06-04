@@ -106,6 +106,29 @@ $menu_items = get_wop_top_menu();
 				</ul>
 			</div>
 		</div>
+		<?php
+		if (function_exists('pll_the_languages')) {
+			$languages = pll_the_languages(['raw' => 1, 'echo' => 0]);
+			// var_dump($languages);
+			// $languages = pll_languages_list(array('fields' => array('slug', 'flag')));
+			// var_dump($languages);
+		
+			if ($languages) {
+				// var_dump($languages);
+				$lang_switch = [];
+				$lang_url = '';
+				foreach ($languages as $slug => $language) {
+					if ($language['slug'] === pll_current_language('slug')) {
+						$lang_switch[$slug] = sprintf('<b>%s</b>', strtoupper($slug));
+					} else {
+						$lang_url = $language['url'];
+						$lang_switch[$slug] = strtoupper($slug);
+					}
+				}
+				printf('<a class="lang-switch" href="%1$s"> %2$s</a>', $lang_url, implode('/', $lang_switch));
+			}
+		}
+		?>
 	</nav>
 
 
