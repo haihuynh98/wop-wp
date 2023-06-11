@@ -439,7 +439,7 @@ acf_add_local_field_group(array(
 			array(
 				'param' => 'page_template',
 				'operator' => '==',
-				'value' => 'page-templates/wop-shop.php',
+				'value' => 'page-templates/wop-shop-page.php',
 			),
 		),
 	),
@@ -459,7 +459,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1686496212,
+	'modified' => 1686496607,
 ));
 
 endif;
