@@ -39,8 +39,9 @@
             }
         }
 
-        public function Uninstall(){
-            $this->db->query("DELETE FROM `" . $this->db->prefix . "options` WHERE `option_name` LIKE '" . self::$prefix . "%'");
+        public static function Uninstall(){
+            global $wpdb;
+            $wpdb->query("DELETE FROM `" . $wpdb->prefix . "options` WHERE `option_name` LIKE '" . self::$prefix . "%'");
         }
 
         public function Plugin_Upgrade($upgrader_object, $options){
@@ -87,7 +88,7 @@
 
         private function Plugin_Install_Hooks_Init(){
             register_activation_hook($this->Path_Get('plugin_file_index'), array($this, 'Install'));
-            register_uninstall_hook($this->Path_Get('plugin_file_index'), array($this, 'Uninstall'));
+            // register_uninstall_hook($this->Path_Get('plugin_file_index'), array($this, 'Uninstall'));
             add_action('upgrader_process_complete', array($this, 'Plugin_Upgrade'), 10, 2);
         }
 

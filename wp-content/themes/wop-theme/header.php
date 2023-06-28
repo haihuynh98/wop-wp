@@ -68,7 +68,6 @@ $menu_items = get_wop_top_menu();
 
 	<nav class="navbar navbar-expand-lg static main-bg" style="width:100vw">
 		<div class="container">
-
 			<!-- Logo -->
 			<a class="logo icon-img-100 hide-pc" href="#">
 				<img src="<?= ASSETS_URL . '/wop/logo-wop.png' ?>" alt="logo">
@@ -83,26 +82,44 @@ $menu_items = get_wop_top_menu();
 			<!-- navbar links -->
 			<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
 				<ul class="navbar-nav">
-					<?php foreach ($menu_items as $index => $menu_item):
+					<?php $index = 0; ?>
+					<?php foreach ($menu_items as $menu_item):
+						$index++;
+						$is_dropdown = false;
+						if (!empty($menu_item['children'])) {
+							$is_dropdown = true;
+						}
 						?>
-						<li class="nav-item">
-							<a class="nav-link" href="<?= $menu_item->url ?>"><span class="rolling-text">
-									<?= $menu_item->post_title ?>
-								</span>
-							</a>
+
+						<li class="nav-item <?= $is_dropdown ? 'dropdown' : '' ?>">
+
+							<?php if ($is_dropdown): ?>
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button"
+									aria-haspopup="true" aria-expanded="false"><span class="rolling-text">
+										<?= $menu_item['title'] ?>
+									</span></a>
+								<div class="dropdown-menu">
+									<?php foreach ($menu_item['children'] as $child): ?>
+										<a class="dropdown-item" href="<?= $child['url'] ?>"><?= $child['title'] ?></a>
+									<?php endforeach; ?>
+								</div>
+							<?php else: ?>
+								<a class="nav-link" href="<?= $menu_item['url'] ?>"><span class="rolling-text">
+										<?= $menu_item['title'] ?>
+									</span>
+								</a>
+							<?php endif; ?>
+
 						</li>
 
-						<?php if ($index === 2): ?>
+						<?php if ($index === 3): ?>
 							<li class="nav-item hide-mobile">
 								<a class="logo icon-img-120" href="/">
 									<img src="<?= ASSETS_URL . '/wop/logo-wop.png' ?>" alt="logo">
 								</a>
 							</li>
 						<?php endif; ?>
-
 					<?php endforeach; ?>
-
-
 				</ul>
 			</div>
 		</div>
@@ -130,6 +147,5 @@ $menu_items = get_wop_top_menu();
 		}
 		?>
 	</nav>
-
 
 	<!-- ==================== End Navbar ==================== -->

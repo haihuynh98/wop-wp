@@ -30,5 +30,28 @@ function get_wop_top_menu()
     $locations = get_nav_menu_locations();
     $theme_location = 'menu-1';
     $menu = get_term($locations[$theme_location], 'nav_menu');
-    return wp_get_nav_menu_items($menu->term_id);
+
+    return get_menu_items($menu->term_id);
+}
+
+function get_menu_items($menu_id) {
+    $menu_items = wp_get_nav_menu_items($menu_id);
+    $menu_array = array();
+
+    foreach ($menu_items as $item) {
+        $menu_item = array(
+            'title' => $item->title,
+            'url' => $item->url,
+            'children' => array()
+        );
+
+        if ($item->menu_item_parent) {
+            $parent_id = $item->menu_item_parent;
+            $menu_array[$parent_id]['children'][] = $menu_item;
+        } else {
+            $menu_array[$item->ID] = $menu_item;
+        }
+    }
+
+    return $menu_array;
 }
