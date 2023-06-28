@@ -4,10 +4,13 @@ Template Name: Joy Product page
 Template Post Type: page
 */
 
-$banner = get_field('banner');
-$about = get_field('about');
-$famously_know = get_field('famously_know');
-$top_partner = get_field('top_partner');
+$parent_page = get_field('parent_page');
+$title = get_field('title');
+$description = get_field('description');
+$photo = get_field('photo');
+$product_information = get_field('product_information');
+$extra_note = get_field('extra_note');
+$product_accessories = get_field('product_accessories');
 
 get_header();
 ?>
@@ -24,9 +27,10 @@ get_header();
                         <p class="sub-title mt-15">Your Destination for Exquisite Billiard Tables</p>
 
                         <div class="product-nav d-flex justify-content-between align-items-center mt-30">
-                            <a href="#" class="navbar-link">JOY Q3</a>
-                            <a href="#" class="navbar-link">JOY Q7</a>
-                            <a href="#" class="navbar-link">JOY Q8</a>
+                            <?php var_dump(get_child_of_page($parent_page));?>
+                            <?php foreach(get_child_of_page($parent_page) as $child_page):?>
+                                <a href="<?= $child_page['url']?>" class="navbar-link"><?= $child_page['title']?></a>
+                                <?php endforeach;?>
                         </div>
 
                     </div>
