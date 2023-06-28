@@ -34,6 +34,13 @@ ul.language-switcher li {
 }
 
 .lang-switch {
-position: absolute;
-right: 30px;
+    position: absolute;
+    right: 30px;
+    top: 25px;
+}
+
+@media screen and (max-width: 991px) {
+    .lang-switch {
+        right: 70px;
+    }
 }
