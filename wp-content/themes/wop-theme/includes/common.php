@@ -59,13 +59,10 @@ function get_menu_items($menu_id)
 
 function get_child_of_page($parent_page)
 {
-    // ID của trang cha
-    $parent_page_id = 123;
-
     // Lấy danh sách các trang con
     $subpages = get_pages(
         array(
-            'child_of' => $parent_page_id,
+            'child_of' => $parent_page,
         )
     );
 
@@ -73,7 +70,7 @@ function get_child_of_page($parent_page)
 
     // Hiển thị liên kết của các trang con
     foreach ($subpages as $key => $subpage) {
-        $result[$key]=['url'=>get_permalink($subpage->ID), 'title' => $subpage->post_title];
+        $result[$key]=['id' =>$subpage->ID, 'url'=>get_permalink($subpage->ID), 'title' => $subpage->post_title];
      
     }
     return $result;

@@ -51,7 +51,7 @@ ul.language-switcher li {
 }
 
 .product-nav a.active {
-    border: #FEC14F;
+    border-bottom: 1px solid #FEC14F;
 }
 
 .image-container {
