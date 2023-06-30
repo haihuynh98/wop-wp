@@ -63,6 +63,7 @@ function get_child_of_page($parent_page)
     $subpages = get_pages(
         array(
             'child_of' => $parent_page,
+			'sort_column' => 'menu_order'
         )
     );
 
